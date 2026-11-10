@@ -52,7 +52,7 @@ const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<'
 const keyOf = n => n.trim().toLowerCase();
 const themeName = id => (THEMES.find(t=>t.id===id)||{}).name || '';
 
-let responses = {}, loaded = false;
+let responses = {}, loaded = false, lastErr = '';
 let view = 'home', current = null, msg = '', msgErr = false, saving = false, resTab = 'picks';
 
 function blank(name){ return {v:2, name:name.trim(), themes:[], tickets:{}, veto:null, pace:null, show:null, crown:null, one:'', miss:'', at:null}; }
@@ -223,7 +223,7 @@ async function doSave(){
     msg = 'Saved! Thanks, '+current.name+'. Here’s where everyone’s tickets went so far.'; msgErr = false;
     go('results');
     loadAll().then(()=>{ if(view==='results') render(); });
-  }catch(e){ saving = false; go('send'); }
+  }catch(e){ saving = false; lastErr = (e && e.message) ? e.message : String(e); go('send'); }
 }
 
 // ===================== Backup: text/email picks =====================
@@ -236,6 +236,7 @@ function renderSend(){
    + '<a class="btn alt" style="text-decoration:none" href="mailto:?subject='+encodeURIComponent('My NYC trip picks')+'&body='+encodeURIComponent(body)+'">Email them</a>'
    + '<button class="btn alt" id="cp">Copy</button></div>'
    + '<div class="card" style="margin-top:14px"><textarea id="code" readonly style="min-height:100px;font-size:12px">'+esc(code)+'</textarea></div>'
+   + (lastErr ? '<p class="note" style="margin-top:10px">Details for Ash: '+esc(lastErr)+(URL_?'':' (no sheet URL loaded)')+'</p>' : (URL_?'':'<p class="note" style="margin-top:10px">Details for Ash: no sheet URL loaded</p>'))
    + '<div class="row" style="margin-top:16px"><button class="btn alt small" id="retry">Try saving again</button><button class="btn alt small" id="edit">Change my picks</button></div></div>';
   const ta = document.getElementById('code');
   document.getElementById('cp').onclick = async e => { try{ await navigator.clipboard.writeText(body); e.target.textContent='Copied'; }catch(err){ ta.focus(); ta.select(); e.target.textContent='Select and copy'; } };
