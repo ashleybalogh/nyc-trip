@@ -8,11 +8,12 @@ const THEMES = [
  {id:'italian',name:'Our Italian roots',desc:'Little Italy, the Italian American Museum, the Bronx’s Arthur Avenue, a classic red-sauce dinner'},
  {id:'food',name:'Eat New York',desc:'Pizza, dumplings, bagels, deli sandwiches, famous cookies'},
  {id:'fandom',name:'Anime, games & TV',desc:'Manga and Studio Ghibli shopping, the Nintendo store, board games, famous TV and movie spots'},
+ {id:'art',name:'Art & big museums',desc:'MoMA, the Met, famous paintings and giant halls'},
  {id:'views',name:'Skyline views',desc:'Observation decks high above the city'},
  {id:'wander',name:'Neighborhood wandering',desc:'SoHo, the Village, the High Line, Brooklyn: shops and people-watching'}
 ];
 const ITEMS = [
- {id:'liberty',t:'iconic',name:'Climb to the Statue of Liberty crown',note:'162 steps up a narrow spiral staircase; tickets are scarce'},
+ {id:'liberty',t:'iconic',name:'Climb to the Statue of Liberty crown',note:'Ferry ride across the harbor; climbing to the crown is 162 steps and tickets are scarce'},
  {id:'ellis',t:'iconic',name:'Ellis Island immigration museum',note:'Same ferry trip as the Statue'},
  {id:'memorial',t:'iconic',name:'9/11 Memorial & Museum',note:'Moving and powerful; plan a few unhurried hours'},
  {id:'bridge',t:'iconic',name:'Walk the Brooklyn Bridge at sunset',note:'About a mile, with the skyline behind you'},
@@ -42,6 +43,7 @@ const ITEMS = [
  {id:'bagels',t:'food',name:'Bagels & lox',note:'The New York breakfast'},
  {id:'katz',t:'food',name:'Katz’s Deli pastrami',note:'Giant sandwiches, very famous'},
  {id:'cookies',t:'food',name:'Levain Bakery cookies',note:'Huge, gooey, legendary'},
+ {id:'icecream',t:'food',name:'Museum of Ice Cream',note:'In SoHo: a sprinkle pool, a giant indoor slide, unlimited ice cream'},
  {id:'chelsea',t:'food',name:'Chelsea Market food hall',note:'Graze through lots of little shops'},
  {id:'kino',t:'fandom',name:'Kinokuniya bookstore',note:'Three floors of Japanese books; a whole floor of manga, figures and Studio Ghibli goods (across from Bryant Park)'},
  {id:'nintendo',t:'fandom',name:'Nintendo New York',note:'Nintendo\u2019s two-story flagship store at Rockefeller Center'},
@@ -50,6 +52,9 @@ const ITEMS = [
  {id:'tvspots',t:'fandom',name:'Famous TV & movie spots',note:'The Friends apartment building, the Ghostbusters firehouse and more'},
  {id:'goldengirls',t:'fandom',name:'A Golden Girls show or pop-up',note:'They come and go in NYC; we\u2019d check what\u2019s on in March'},
  {id:'guitar',t:'stage',name:'Browse a legendary guitar shop',note:'For our guitar player'},
+ {id:'moma',t:'art',name:'Museum of Modern Art (MoMA)',note:'Starry Night, Warhol\u2019s soup cans and more'},
+ {id:'met',t:'art',name:'The Metropolitan Museum of Art',note:'An Egyptian temple, suits of armor, and art from everywhere'},
+ {id:'esb',t:'views',name:'Empire State Building observation deck',note:'The classic: 86th-floor open-air deck'},
  {id:'topofrock',t:'views',name:'Top of the Rock',note:'Classic view straight at the Empire State Building'},
  {id:'summit',t:'views',name:'Summit One Vanderbilt',note:'Mirror rooms and glass ledges way up high'},
  {id:'soho',t:'wander',name:'SoHo shopping',note:'Boutiques and cast-iron buildings'},
